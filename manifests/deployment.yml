@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: xaviersavioaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xaviersavioaks
+  template:
+    metadata:
+      labels:
+        app: xaviersavioaks 
+    spec:
+      containers:
+        - name: xaviersavioaks 
+          image: fphccr.azurecr.io/xaviersavioaks
+          ports:
+          - containerPort: 80
